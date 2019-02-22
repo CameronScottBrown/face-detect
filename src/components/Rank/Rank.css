@@ -1,0 +1,10 @@
+.rank {
+  font-size: 2rem;
+  color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .rank {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,44 @@
+.form {
+  display: block;
+}
+
+.form__intro {
+  display: block;
+  font-size: 1.2rem;
+  margin: 20px auto;
+  width: 80%;
+}
+
+.form__wrapper {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  max-width: 500px;
+  height: 3rem;
+  margin: 0 auto;
+
+}
+
+.form__input {
+  width: 70%;
+  border: 2px solid black;
+  font-size: 1.3rem;
+  padding: 2px;
+}
+
+.form__submit-btn {
+  width: 30%;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: white;
+  background-color: rgb(124, 81, 243);
+  border: 2px solid black;
+  border-left: none;
+
+  transition: all .2s;
+}
+
+.form__submit-btn:hover {
+  background-color: rgb(1, 196, 218);
+  cursor: pointer;
+}
