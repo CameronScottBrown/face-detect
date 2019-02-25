@@ -10,12 +10,12 @@
   padding: 10px;
   border-radius: 4px;
   transition: transform 0.2s;
-  transition: background-color 0.5s;
+  /* transition: background-color 0.5s; */
   cursor: pointer;
 }
 
 .nav__text:hover {
   text-decoration: underline;
-  background-color: white;
+  /* background-color: white; */
   transform: scale(1.03);
 }
