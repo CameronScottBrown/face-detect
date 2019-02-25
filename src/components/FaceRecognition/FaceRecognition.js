@@ -5,7 +5,7 @@ const FaceRecognition = ({ imageUrl }) => {
   if (imageUrl) {
     return (
       <div className="face-box">
-        <img alt={"face detection results"} src={imageUrl} />
+        <img id={"input-image"} alt={"face detection results"} src={imageUrl} />
       </div>
     );
   } else {
