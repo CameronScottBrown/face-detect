@@ -14,7 +14,8 @@
   cursor: pointer;
 }
 
-.nav__text:hover {
+.nav__text:hover,
+.nav__text:active {
   text-decoration: underline;
   /* background-color: white; */
   transform: scale(1.03);

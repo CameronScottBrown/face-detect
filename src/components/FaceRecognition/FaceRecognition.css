@@ -1,13 +1,11 @@
 .face-box {
-  margin: 0 auto;
   display: flex;
-  justify-content: center;
   width: 80%;
-  max-width: 500px;
-  width: 80%;
-  max-width: 500px;
+  margin: 0 auto;
 }
 
 .face-box img {
-  margin: 10px;
+  display: relative;
+  margin: 20px auto;
+  max-height: 400px;
 }
