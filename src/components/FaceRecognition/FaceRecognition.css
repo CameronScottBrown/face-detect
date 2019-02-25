@@ -1,0 +1,11 @@
+.face-box {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.face-box img {
+  display: relative;
+  margin: 20px auto;
+  max-height: 400px;
+}
