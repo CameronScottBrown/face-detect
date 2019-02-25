@@ -6,9 +6,9 @@
 
   border-radius: 100px;
 
-  transition: transform .3s;
-  transition: background-color 1s;
-} 
+  transition: transform 0.2s;
+  transition: background-color 0.5s;
+}
 
 .logo:hover {
   transform: scale(1.05);
@@ -17,7 +17,7 @@
 
 @media only screen and (max-width: 768px) {
   .logo {
-    transform: scale(.7);
+    transform: scale(0.7);
     top: 10px;
     left: 10px;
   }
