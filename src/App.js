@@ -51,9 +51,9 @@ class App extends Component {
 
     app.models
       .predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
-      .then(response => {
-        this.calculateFaceLocation(response);
-      })
+      .then(response =>
+        this.displayFaceBox(this.calculateFaceLocation(response))
+      )
       .catch(err => console.log(err));
   };
 
@@ -67,7 +67,7 @@ class App extends Component {
           onInputChange={this.onInputChange}
           onButtonSubmit={this.onButtonSubmit}
         />
-        <FaceRecognition imageUrl={this.state.imageUrl} />
+        <FaceRecognition imageUrl={this.state.imageUrl} box={this.state.box} />
       </div>
     );
   }

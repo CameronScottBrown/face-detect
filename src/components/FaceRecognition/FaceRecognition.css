@@ -1,11 +1,13 @@
 .face-box {
-  display: flex;
-  width: 80%;
-  margin: 0 auto;
+  position: absolute;
+  margin-top: 20px;
 }
 
-.face-box img {
-  display: relative;
-  margin: 20px auto;
-  max-height: 400px;
+.bounding-box {
+  position: absolute;
+  box-shadow: 0 0 0 3px #149df2 inset;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  cursor: pointer;
 }
