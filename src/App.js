@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 
 import Navigation from "./components/Navigation/Navigation";
+import SignIn from "./components/SignIn/SignIn";
 import Logo from "./components/Logo/Logo";
 import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
 import Rank from "./components/Rank/Rank";
@@ -61,6 +62,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navigation />
+        <SignIn />
         <Logo />
         <Rank />
         <ImageLinkForm
