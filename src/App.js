@@ -6,25 +6,12 @@ import Logo from "./components/Logo/Logo";
 import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
 import Rank from "./components/Rank/Rank";
 import FaceRecognition from "./components/FaceRecognition/FaceRecognition";
-import Particles from "react-particles-js";
 
 import Clarifai from "clarifai";
 
 const app = new Clarifai.App({
   apiKey: "f3b743c434ab4e9a86868e5daa1863fb"
 });
-
-const particlesOptions = {
-  particles: {
-    number: {
-      value: 120,
-      density: {
-        enable: true,
-        value_area: 600
-      }
-    }
-  }
-};
 
 class App extends Component {
   constructor() {
@@ -51,6 +38,10 @@ class App extends Component {
     };
   };
 
+  displayFaceBox = box => {
+    this.setState({ box: box });
+  };
+
   onInputChange = event => {
     this.setState({ input: event.target.value });
   };
@@ -69,7 +60,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Particles className="particles" params={particlesOptions} />
         <Navigation />
         <Logo />
         <Rank />

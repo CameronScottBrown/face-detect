@@ -4,10 +4,26 @@ body {
 
   font-family: Arial, Helvetica, sans-serif;
 
-  background-image: linear-gradient(to right, rgb(124, 81, 243), rgb(1, 196, 218));
+  background-image: linear-gradient(
+    to right,
+    rgb(124, 81, 243),
+    rgb(1, 196, 218)
+  );
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
+.particles {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
 
-
+@media only screen and (max-width: 768px) {
+  .particles canvas {
+    display: none;
+  }
+}
