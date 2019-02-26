@@ -13,12 +13,16 @@
   padding: 40px;
   background-color: rgb(255, 196, 0, 0.5);
   border-radius: 20px;
-
+  box-shadow: 2px 2px 6px #333;
   transition: background-color 0.5s;
 }
 
 .form__wrapper:hover {
   background-color: rgb(255, 196, 0, 0.8);
+}
+
+.form__wrapper:hover .form__input {
+  background-color: rgb(255,255,255, 1);
 }
 
 @media only screen and (max-width: 768px) {
@@ -32,6 +36,8 @@
   border: 2px solid black;
   font-size: 1.3rem;
   padding: 2px;
+  background-color: rgb(255,255,255, .5);
+  transition: all 0.5s;
 }
 
 .form__submit-btn {
@@ -48,5 +54,4 @@
 
 .form__submit-btn:hover {
   background-color: rgb(1, 196, 218);
-  cursor: pointer;
 }

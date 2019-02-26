@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 
 import Navigation from "./components/Navigation/Navigation";
+import Register from "./components/Register/Register";
 import SignIn from "./components/SignIn/SignIn";
 import Logo from "./components/Logo/Logo";
 import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
@@ -20,7 +21,8 @@ class App extends Component {
     this.state = {
       input: "",
       imageUrl: "",
-      box: {}
+      box: {},
+      route: 'signin'
     };
   }
 
@@ -58,19 +60,32 @@ class App extends Component {
       .catch(err => console.log(err));
   };
 
+  onRouteChange = (route) => {
+    this.setState({route: route});
+  }
+  
+
   render() {
     return (
       <div className="App">
-        <Navigation />
-        <SignIn />
+        <Navigation onRouteChange={this.onRouteChange}/>
         <Logo />
-        <Rank />
-        <ImageLinkForm
-          onInputChange={this.onInputChange}
-          onButtonSubmit={this.onButtonSubmit}
-        />
-        <FaceRecognition imageUrl={this.state.imageUrl} box={this.state.box} />
+        <Register onRouteChange={this.onRouteChange} />
+        { this.state.route === 'signin' 
+          ?
+            <SignIn onRouteChange={this.onRouteChange}/>
+          :
+            <div>
+              <Rank />
+              <ImageLinkForm
+                onInputChange={this.onInputChange}
+                onButtonSubmit={this.onButtonSubmit}
+              />
+              <FaceRecognition imageUrl={this.state.imageUrl} box={this.state.box} />
+            </div>
+        }
       </div>
+      
     );
   }
 }
