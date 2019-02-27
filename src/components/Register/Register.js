@@ -8,7 +8,7 @@ const Register = ({ onRouteChange }) => {
         <ul className="flex-outer">
           <li>
             <label htmlFor="name">Name</label>
-            <input type="text" id="register-email"/>
+            <input type="text" id="register-name"/>
           </li>
           <li>
             <label htmlFor="email">Email</label>

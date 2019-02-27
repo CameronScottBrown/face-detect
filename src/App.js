@@ -70,7 +70,8 @@ class App extends Component {
       <div className="App">
         <Navigation onRouteChange={this.onRouteChange}/>
         <Logo />
-        <Register onRouteChange={this.onRouteChange} />
+        {/* {<Register onRouteChange={this.onRouteChange} />} */}
+        
         { this.state.route === 'signin' 
           ?
             <SignIn onRouteChange={this.onRouteChange}/>
