@@ -13,7 +13,7 @@ const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
           type="text"
           onChange={onInputChange}
         />
-        <button className="form__submit-btn" onClick={onButtonSubmit}>
+        <button className="form__submit-btn btn" onClick={onButtonSubmit}>
           Detect
         </button>
       </div>

@@ -22,7 +22,8 @@ class App extends Component {
       input: "",
       imageUrl: "",
       box: {},
-      route: 'signin'
+      route: "signin",
+      isSignedIn: false
     };
   }
 
@@ -60,33 +61,45 @@ class App extends Component {
       .catch(err => console.log(err));
   };
 
-  onRouteChange = (route) => {
-    this.setState({route: route});
-  }
-  
+  onRouteChange = route => {
+    // set isSignedIn for nav routing
+    if (route === "signout") {
+      // we are signed out
+      this.setState({ isSignedIn: false });
+    } else if (route === "home") {
+      // if we get sent home, it means we are signed in
+      this.setState({ isSignedIn: true });
+    }
+    this.setState({ route: route });
+  };
 
   render() {
+    const { box, route, imageUrl, isSignedIn } = this.state;
     return (
       <div className="App">
-        <Navigation onRouteChange={this.onRouteChange}/>
-        <Logo />
-        {/* {<Register onRouteChange={this.onRouteChange} />} */}
-        
-        { this.state.route === 'signin' 
-          ?
-            <SignIn onRouteChange={this.onRouteChange}/>
-          :
-            <div>
-              <Rank />
-              <ImageLinkForm
-                onInputChange={this.onInputChange}
-                onButtonSubmit={this.onButtonSubmit}
-              />
-              <FaceRecognition imageUrl={this.state.imageUrl} box={this.state.box} />
-            </div>
-        }
+        <Navigation
+          onRouteChange={this.onRouteChange}
+          isSignedIn={isSignedIn}
+        />
+
+        {route === "home" ? (
+          <div>
+            <Logo />
+            <Rank />
+            <ImageLinkForm
+              onInputChange={this.onInputChange}
+              onButtonSubmit={this.onButtonSubmit}
+            />
+            <FaceRecognition imageUrl={imageUrl} box={box} />
+          </div>
+        ) : route === "signin" ? (
+          <SignIn onRouteChange={this.onRouteChange} />
+        ) : route === "signout" ? (
+          <SignIn onRouteChange={this.onRouteChange} />
+        ) : (
+          <Register onRouteChange={this.onRouteChange} />
+        )}
       </div>
-      
     );
   }
 }
