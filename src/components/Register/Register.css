@@ -1,0 +1,89 @@
+
+.register {
+  max-width: 500px;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  padding: 20px 0;
+  background-color: rgb(255, 196, 0, 0.5);
+  border-radius: 20px;
+  box-shadow: 2px 2px 6px #333;
+  transition: background-color .5s;
+}
+
+.register:hover {
+  background-color: rgb(255, 196, 0, 0.8);
+}
+
+.register:hover input {
+  background-color: rgb(255, 255, 255, 1);
+}
+
+@media only screen and (max-width: 768px) {
+  .register {
+    width: 300px;
+  }
+}
+
+
+.flex-outer {
+  list-style-type: none;
+  padding: 0 5px;
+}
+
+.flex-outer {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.flex-outer li{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.flex-outer > li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.flex-outer li label {
+  padding: 4px;
+  text-transform: uppercase;
+}
+
+.flex-outer > li > label {
+  flex: .4 0 120px;
+  max-width: 180px;
+}
+
+
+.flex-outer li input {
+  padding: 10px;
+  border: 1px solid black;
+  font-size: 1.3rem;
+  max-width: 80%;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255, .5);
+  transition: all .5s;
+}
+
+.register--buttons {
+  margin: 20px 20px 0 20px;
+}
+
+.register--submit {
+  flex: 2 1 200px;
+  padding: 10px 18px;
+  width: 200px;
+  border: 1px solid black;
+  background: rgb(124, 81, 243);
+  color: #f2f2f2;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  border-radius: 2px;
+
+  transition: all .2s;
+}
+
+.register--submit:hover {
+  background-color: rgb(1, 196, 218);
+}
