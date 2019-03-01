@@ -23,8 +23,24 @@ class App extends Component {
       imageUrl: "",
       box: {},
       route: "signin",
-      isSignedIn: false
+      isSignedIn: false,
+      user: {
+        id: '',
+        name: '',
+        entries: 0,
+        joined: ''
+      }
     };
+  }
+
+  loadUser = data => {
+    this.setState({ user : {
+        id: data.id,
+        name: data.name,
+        entries: data.entries,
+        joined: data.joined
+    }});
+    console.log(this.state.user); //awesome
   }
 
   calculateFaceLocation = data => {
@@ -97,7 +113,9 @@ class App extends Component {
         ) : route === "signout" ? (
           <SignIn onRouteChange={this.onRouteChange} />
         ) : (
-          <Register onRouteChange={this.onRouteChange} />
+          <Register 
+            onRouteChange={this.onRouteChange}
+            loadUser={this.loadUser} />
         )}
       </div>
     );
