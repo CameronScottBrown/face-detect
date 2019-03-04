@@ -9,6 +9,9 @@ import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
 import Rank from "./components/Rank/Rank";
 import FaceRecognition from "./components/FaceRecognition/FaceRecognition";
 
+
+const appEndpoint = 'https://cryptic-earth-48476.herokuapp.com';
+
 const initialState = {
   input: "",
   imageUrl: "",
@@ -63,7 +66,7 @@ class App extends Component {
 
   onPictureSubmit = () => {
     this.setState({ imageUrl: this.state.input }); //set input to image URL
-    fetch('http://localhost:3000/imageurl', {
+    fetch(`${appEndpoint}/imageurl`, {
       method: 'post',
       headers: {'Content-Type': 'application/json',},
       body: JSON.stringify({
@@ -73,7 +76,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if(response){
-          fetch('http://localhost:3000/image', {
+          fetch(`${appEndpoint}/image`, {
             method: 'put',
             headers: {'Content-Type': 'application/json',},
             body: JSON.stringify({

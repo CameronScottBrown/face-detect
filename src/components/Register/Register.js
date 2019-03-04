@@ -1,6 +1,8 @@
 import React from "react";
 import "./Register.css";
 
+const appEndpoint = 'https://cryptic-earth-48476.herokuapp.com';
+
 class Register extends React.Component {
   constructor(props) {
     super(props);
@@ -24,7 +26,7 @@ class Register extends React.Component {
   }
 
   onSubmitRegistration = () => {
-    fetch('http://localhost:3000/register', {
+    fetch(`${appEndpoint}/register`, {
       method: 'post',
       headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify({

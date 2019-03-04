@@ -1,6 +1,8 @@
 import React from "react";
 import "./SignIn.css";
 
+const appEndpoint = 'https://cryptic-earth-48476.herokuapp.com';
+
 class SignIn extends React.Component {
 
   constructor(props) {
@@ -20,7 +22,7 @@ class SignIn extends React.Component {
   }
 
   onSubmitSignIn = () => {
-    fetch('http://localhost:3000/signin', {
+    fetch(`${appEndpoint}/signin`, {
       method: 'post',
       headers: { 'Content-Type': 'application/json'},
       body: JSON.stringify({
