@@ -1,5 +1,13 @@
 # Face Detect
 
+## Live Demo
+http://find-faces.herokuapp.com/
+
+Feel free to create a throwaway account and test functionality.
+
+
+--------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
